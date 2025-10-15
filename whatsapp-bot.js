@@ -631,14 +631,14 @@ client.on('message_reaction', async (reaction) => {
                 let confirmationMessage = '';
                 
                 if (reaction.reaction === '👍' || reaction.reaction === '✅') {
-                    confirmationMessage = `✅ Great news! Your ${requestType} request has been approved by the admin and is being processed.`;
+                    confirmationMessage = `✅ Great news! Your ${requestType} request has been processed and is now online.`;
                 } else if (reaction.reaction === '❌' || reaction.reaction === '👎') {
-                    confirmationMessage = `❌ Your ${requestType} request has been reviewed. The admin will contact you shortly with feedback.`;
+                    confirmationMessage = `❌ Your ${requestType} request has unfortunately been rejected. Please contact the admin for hands-on support.`;
                 } else if (reaction.reaction === '👀' || reaction.reaction === '⏳') {
                     confirmationMessage = `👀 Your ${requestType} request is being reviewed by the admin.`;
                 } else {
                     // For any other reaction, send a generic acknowledgment
-                    confirmationMessage = `📬 Update: The admin has reviewed your ${requestType} request.`;
+                    confirmationMessage = `📬 Update: Your update is taking longer than expected. Sorry for the inconvenience caused.`;
                 }
                 
                 // Send confirmation to the original user
